@@ -1,0 +1,21 @@
+# Docker related
+.env
+docker-compose.override.yml # If you use one
+# Docker volumes (these are managed by Docker, not Git)
+db_data/
+wordpress_data/ # If you ever create a separate volume for wp-content (less common with this setup)
+
+# WordPress specific (the core files are usually NOT in your repo)
+# Only commit wp-content or specific parts of it
+# If you don't use the 'uploads' folder for user-uploaded media in Git, add it:
+wp-content/uploads/
+# If you want to exclude all themes/plugins except your custom ones:
+wp-content/themes/*
+!wp-content/themes/your-custom-theme/ # Keep your custom theme
+wp-content/plugins/*
+!wp-content/plugins/your-custom-plugin/ # Keep your custom plugin
+
+# General
+.DS_Store
+*.log
+*.bak
