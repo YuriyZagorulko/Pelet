@@ -1,6 +1,6 @@
 # Docker related
 .env
-docker-compose.override.yml # If you use one
+docker-compose.yml
 # Docker volumes (these are managed by Docker, not Git)
 db_data/
 wordpress_data/ # If you ever create a separate volume for wp-content (less common with this setup)

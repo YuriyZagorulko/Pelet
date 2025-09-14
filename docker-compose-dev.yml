@@ -16,7 +16,7 @@ services:
   wordpress:
     depends_on:
       - db
-    image: wordpress:latest # Or wordpress:6.5.4-php8.2-apache for a specific version
+    image: wordpress:6.8.1-php8.1-apache # Or wordpress:6.5.4-php8.2-apache for a specific version
     container_name: wordpress-app
     restart: always
     ports:
@@ -30,7 +30,7 @@ services:
       WORDPRESS_DEBUG: ${WORDPRESS_DEBUG}
     volumes:
       # Mount your local wp-content directory into the container
-      - ./wp-content:/var/www/html/wp-content
+      - ./wp-content:/var/www/html/wp-content:Z
       # Optional: if you have a custom wp-config.php outside of wp-content:
       # - ./wp-config.php:/var/www/html/wp-config.php
     # If you need custom PHP settings (e.g., upload limits), create a custom .ini file
